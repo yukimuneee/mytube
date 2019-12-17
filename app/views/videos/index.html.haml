@@ -1,3 +1,8 @@
-.wrapper
-  = render "main_header"
-  = render "main_contents"
+.main-contents
+  .main-contents__title
+    List of videos
+  .main-contents__contentbox
+    .main-contents__contentbox__video
+      = video_tag "/public/uploads/video/video/1/IMG_3647.MOV",loop: true, controls: true, width: 550, id: "mv"
+
+    .main-contents__contentbox__text

@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.header{
+  height: 80px;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: space-between;
+  line-height: 80px;
+  position: relative;
+  
+  &__title{
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+
+    &__icon{
+      color: red;
+      line-height: 80px;
+      margin-left: 25px;
+      font-size: 30px;
+
+    }
+    &__text{
+      color: black;
+      font-weight: bold;
+      font-family: monospace;
+      font-size: 20px;
+    }
+  }
+  &__middle{
+    height: 30px;
+    width: 300px;
+    //仮です
+  }
+  &__right{
+    &__btn0{
+      color: gray;
+      font-size: 25px;
+      padding-right: 15px;
+      font-family: monospace;
+      text-decoration: none;
+    }
+    &__btn1{
+      color: gray;
+      font-size: 30px;
+      text-decoration: none;
+      padding-right: 15px;
+      font-family: monospace;
+
+    }
+  }
+}
+.main-contents{
+  box-sizing: border-box;
+  height: calc(100vh - 80px);
+  width: 100vw;
+  padding: 0px 45px;
+  background: image-url('beatles.jpg');
+  background-size: cover;
+  overflow: scroll;
+  &__title{
+    font-size: 45px;
+    color: azure;
+    font-family: monospace;
+    height: 80px;
+    line-height: 80px;
+
+  }
+  &__contentbox{
+    width: 300px;            /* 幅指定 */
+    display:  inline-block;     /* インラインブロック要素にする */
+    vertical-align:  top;       /* 要素を上揃えにする */
+    // background-color:  #ccc;    /* 背景色指定 */
+    margin-bottom: 10px;        /* 要素同士の隙間調整 */
+    padding:  10px;             /* 余白指定 */
+    box-sizing: border-box;
+
+  }
+}

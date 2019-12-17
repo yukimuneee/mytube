@@ -8,4 +8,22 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header.header
+      = link_to "/", class: "header__title" do
+        = icon('fab', 'youtube', class: 'header__title__icon')
+        .header__title__text
+          MyTube
+      .header__middle
+      .header__right
+        - if user_signed_in?
+          = link_to current_user.nickname, user_path(current_user), class: "header__right__btn0"
+          = link_to new_video_path, class: "header__right__btn1" do
+            = icon('fas', 'video-slash')
+          = link_to destroy_user_session_path, method: :delete, class: "header__right__btn1" do
+            = icon('fas', 'sign-out-alt')
+        - else
+          = link_to new_user_session_path, class: "header__right__btn1" do
+            = icon('fas', 'sign-in-alt')
+          = link_to new_user_registration_path, class: "header__right__btn1" do
+            = icon('fas', 'user-plus')
     = yield
