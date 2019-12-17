@@ -1,0 +1,20 @@
+#account-page.account-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      %h2 ログイン
+      %h5 ・必要項目を入力してください
+    .account-page__inner--right.user-form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.text_field :nickname, class: "field__form", autofocus: true, autocomplete: "nickname", placeholder: 'お名前'
+        .field
+          = f.email_field :email, class: "field__form", autofocus: true, autocomplete: "email", placeholder: 'メールアドレス'
+        .field
+          = f.password_field :password, class: "field__form", autocomplete: "current-password", placeholder: 'パスワード'
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me, class: "field__form1"
+            = f.label :remember_me, class: "field__form1"
+        .actions
+          = f.submit "SEND"
+      -# = render "devise/shared/links"
